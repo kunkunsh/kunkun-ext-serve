@@ -6,7 +6,7 @@
 	// let isDragging = false;
 	let { onSubmit }: { onSubmit: (path: string, port: number) => void } = $props();
 	let path = $state('');
-	let port = $state(0);
+	let port = $state(8000);
 
 	onMount(() => {
 		// event.onDragEnter(() => {

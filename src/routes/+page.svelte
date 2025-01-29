@@ -23,7 +23,7 @@
 		}
 
 		getRpcAPI()
-			.then((rpc) => {
+			.then((rpc) =>
 				rpc.api.serve(path, port).then((realPort) => {
 					jobsStore.addJob({
 						path,
@@ -31,11 +31,11 @@
 						process: rpc.process
 					});
 					toast.success('Server started');
-				});
-			})
+				})
+			)
 			.catch((err) => {
 				toast.error('Failed to serve', {
-					description: err.message
+					description: `${err.message}; consider changing the port`
 				});
 			});
 	}
