@@ -1,0 +1,124 @@
+{
+	"$schema": "https://schema.kunkun.sh",
+	"name": "kunkun-ext-serve",
+	"version": "0.0.6",
+	"license": "MIT",
+	"kunkun": {
+		"name": "Static File Server",
+		"shortDescription": "Serve static files from local directory",
+		"longDescription": "Serve static files from local directory",
+		"identifier": "kunkun-ext-serve",
+		"icon": {
+			"type": "iconify",
+			"value": "mdi:server"
+		},
+		"demoImages": [],
+		"permissions": [
+			"dialog:all",
+			"event:drag-drop",
+			"event:drag-enter",
+			"event:drag-leave",
+			"event:drag-over",
+			{
+				"permission": "fs:exists",
+				"allow": [
+					{
+						"path": "**"
+					}
+				]
+			},
+			{
+				"permission": "fs:stat",
+				"allow": [
+					{
+						"path": "**"
+					}
+				]
+			},
+			{
+				"permission": "shell:deno:spawn",
+				"allow": [
+					{
+						"path": "$EXTENSION/deno-src/index.ts",
+						"net": "*",
+						"read": "*"
+					}
+				]
+			},
+			"shell:stdin-write",
+			"shell:kill",
+			{
+				"permission": "open:folder",
+				"allow": [
+					{
+						"path": "**"
+					}
+				]
+			},
+			{
+				"permission": "open:url",
+				"allow": [
+					{
+						"url": "http://localhost:*"
+					}
+				]
+			}
+		],
+		"customUiCmds": [
+			{
+				"main": "/",
+				"dist": "build",
+				"devMain": "http://localhost:5173",
+				"name": "Serve Static Files",
+				"cmds": []
+			}
+		],
+		"templateUiCmds": []
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"@kksh/api": "0.0.55",
+		"@kksh/svelte5": "0.1.14",
+		"clsx": "^2.1.1",
+		"lucide-svelte": "^0.469.0",
+		"mode-watcher": "^0.5.0",
+		"tailwind-merge": "^2.6.0",
+		"tailwind-variants": "^0.3.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/kit": "^2.15.2",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"svelte": "^5.16.6",
+		"svelte-check": "^4.1.1",
+		"typescript": "^5.7.2",
+		"vite": "^6.0.7",
+		"@sveltejs/adapter-static": "^3.0.8",
+		"@tailwindcss/typography": "^0.5.16",
+		"@types/eslint": "^9.6.1",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^9.17.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.46.1",
+		"globals": "^15.14.0",
+		"postcss": "^8.4.49",
+		"prettier": "^3.4.2",
+		"prettier-plugin-svelte": "^3.3.2",
+		"prettier-plugin-tailwindcss": "^0.6.9",
+		"tailwindcss": "^3.4.17",
+		"typescript-eslint": "^8.19.1"
+	},
+	"type": "module",
+	"files": [
+		"build",
+		".gitignore"
+	]
+}
