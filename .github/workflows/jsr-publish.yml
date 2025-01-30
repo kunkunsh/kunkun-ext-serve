@@ -22,4 +22,4 @@ jobs:
       - name: Verify Package
         run: bunx kksh verify --publish
       - name: Publish package
-        run: bunx jsr publish
+        run: npx jsr publish
