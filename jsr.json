@@ -1,0 +1,13 @@
+{
+	"name": "@kunkun/kunkun-ext-serve",
+	"version": "0.1.0",
+	"license": "MIT",
+	"exports": "./mod.ts",
+	"imports": {
+		"@kunkun/api": "jsr:@kunkun/api@^0.0.52",
+		"@std/assert": "jsr:@std/assert@1"
+	},
+	"publish": {
+		"include": ["build", "README.md", "package.json", "mod.ts", "deno-src"]
+	}
+}
