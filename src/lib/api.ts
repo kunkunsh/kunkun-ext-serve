@@ -1,5 +1,5 @@
 import type { API } from '../api.types.ts';
-import { shell } from '@kksh/api/ui/iframe';
+import { shell } from '@kksh/api/ui/custom';
 
 export async function getRpcAPI() {
 	const { rpcChannel, process, command } = await shell.createDenoRpcChannel<object, API>(

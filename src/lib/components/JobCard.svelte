@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, Card } from '@kksh/svelte5';
 	import type { ServeJob } from '@/models';
-	import { open, toast } from '@kksh/api/ui/iframe';
+	import { open, toast } from '@kksh/api/ui/custom';
 	import { jobsStore } from '@/stores/jobs';
 
 	let { job }: { job: ServeJob } = $props();

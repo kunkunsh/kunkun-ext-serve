@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Input, Label, Button } from '@kksh/svelte5';
 	import { onMount } from 'svelte';
-	import { event, toast, fs, dialog } from '@kksh/api/ui/iframe';
+	import { event, toast, fs, dialog } from '@kksh/api/ui/custom';
 
 	// let isDragging = false;
 	let { onSubmit }: { onSubmit: (path: string, port: number) => void } = $props();

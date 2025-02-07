@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Card, Input, Label } from '@kksh/svelte5';
-	import { ui, dialog, fs, toast, event } from '@kksh/api/ui/iframe';
+	import { ui, dialog, fs, toast, event } from '@kksh/api/ui/custom';
 	import { getRpcAPI } from '@/api';
 	import { jobsStore } from '@/stores/jobs';
 	import JobCard from '@/components/JobCard.svelte';

@@ -1,4 +1,4 @@
-import type { Child } from '@kksh/api/ui/iframe';
+import type { Child } from '@kksh/api/ui/custom';
 
 export type Process = {
 	kill: () => Promise<void>;
